@@ -1,0 +1,20 @@
+<?php
+/**
+ * Register the Product post type with a Dashicon.
+ *
+ * @see register_post_type()
+ */
+function wpdocs_create_post_type() {
+    register_post_type( 'acme_product',
+        array(
+            'labels' => array(
+                'name'          => __( 'Pinterest', 'textdomain' ),
+                'singular_name' => __( 'Pinterest', 'textdomain' )
+            ),
+            'public'      => true,
+            'has_archive' => true,
+            'menu_icon'   => 'dashicons-pinterest',
+        )
+    );
+}
+add_action( 'init', 'wpdocs_create_post_type', 0 );
